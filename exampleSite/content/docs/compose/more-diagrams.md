@@ -1,5 +1,5 @@
 +++
-title = "Graphs, charts & dynamic tables"
+title = "More Diagrams and Charts"
 weight = 9
 [dataset1]
   fileLink = "content/projects.csv" # path to where csv is stored
