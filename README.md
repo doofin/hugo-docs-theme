@@ -31,6 +31,10 @@ The [exampleSite](https://github.com/onweru/compose/tree/master/exampleSite) is 
 ## Project architecture
 The theme uses the following technologies:
 - sass for styling, under the `layouts/partials/head/index.html`, which invokes hugo's sass processor
+
+
+To learn more about directory structure, see [Hugo directory structure](https://gohugo.io/getting-started/directory-structure/)
+
 ## License
 
 This theme is available under the [MIT license](https://github.com/onweru/compose/blob/master/LICENSE).
