@@ -197,7 +197,7 @@ This allows you to embed a youtube video in you content. You would achieve that 
 
 {{< youtube "https://www.youtube.com/watch?v=MmG2ah5Df4g" >}}
 
-#### Lite YouTube
+Lite YouTube
 
 The `liteyoutube` shortcode supports three parameters:
 
