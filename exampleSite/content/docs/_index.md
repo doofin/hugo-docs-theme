@@ -16,3 +16,10 @@ Please note that the features listed under each theme are independent of each ot
 
 {{< button "./clarity/" "Clarity Theme Docs" >}}
 
+A little Scala code snippet:
+```scala
+def factorial(n: Int): Int = {
+  if (n == 0) 1
+  else n * factorial(n - 1)
+}
+```
