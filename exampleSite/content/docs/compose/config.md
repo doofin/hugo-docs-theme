@@ -3,7 +3,29 @@ title = "Configuration"
 weight = 4
 +++
 
-This theme is primarily meant for documentation. You can customize the configuration under `exampleSite/config/_default/params.toml`. see the file for available options. 
+This theme is primarily meant for documentation. You can customize the configuration under `exampleSite/config/_default`. 
+
+For example, in `params.toml`, you can set:
+- Site title,logo
+- copyright info
+- search options
+- time format
+- source code display options
+
+other config files include:
+- `menus.toml` for navigation menus
+- `languages.toml` for multilingual support
+- `hugo.toml` for Hugo framework settings
+
+currently, the directory structure under `content/` is as follows:
+```
+content
+├── blog
+├── docs
+│   └── compose
+└── tutorials
+    └── example
+```
 
 #### Documentation
 
@@ -21,12 +43,3 @@ Unlike other regular pages, the documentation pages will have a left sidebar. Th
 
 At the root level there's an `_index.md` page which is the homepage. Feel free to edit it as you like.
 
-#### Other pages
-
-You can also add as many regular pages as you like e.g `about.md`, `contact.md`...
-
-Take advantage of [shortcodes](../shortcodes) to customize the layouts of these pages and any other.
-
-#### Does this theme support blogging function?
-
-Yes.

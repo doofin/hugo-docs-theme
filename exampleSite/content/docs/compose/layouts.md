@@ -1,6 +1,6 @@
 +++
 description = "basic configuration"
-title = "Customize layouts & components"
+title = "layouts"
 weight = 10
 +++
 
@@ -10,29 +10,29 @@ These modifiers are classes you can use with shortcodes to customize the look an
 
 #### Grid
 
-| modifier | space |
-| --- | --- |
-| grid-2 | 2 columns |
-| grid-3 | 3 columns |
-| grid-4 | 4 columns |
+| modifier | space     |
+| -------- | --------- |
+| grid-2   | 2 columns |
+| grid-3   | 3 columns |
+| grid-4   | 4 columns |
 
 #### Spacing
 
-| modifier | space |
-| --- | --- |
-| mt-1 | 1.5rem top margin |
-| mt-2 | 3rem top margin |
-| mt-3 | 4.5rem top margin |
-| mt-4 | 6rem top margin |
+| modifier | space             |
+| -------- | ----------------- |
+| mt-1     | 1.5rem top margin |
+| mt-2     | 3rem top margin   |
+| mt-3     | 4.5rem top margin |
+| mt-4     | 6rem top margin   |
 
 > use pt-1 \~ pt-4 for top padding
 
-| modifier | space |
-| --- | --- |
-| mb-1 | 1.5rem bottom margin |
-| mb-2 | 3rem bottom margin |
-| mb-3 | 4.5rem bottom margin |
-| mb-4 | 6rem bottom margin |
+| modifier | space                |
+| -------- | -------------------- |
+| mb-1     | 1.5rem bottom margin |
+| mb-2     | 3rem bottom margin   |
+| mb-3     | 4.5rem bottom margin |
+| mb-4     | 6rem bottom margin   |
 
 > use pb-1 \~ pb-4 for bottom padding
 
