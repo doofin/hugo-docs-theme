@@ -1,8 +1,20 @@
 # Compose
 
-Compose is a [Hugo](https://gohugo.io/) theme for documentation websites. The theme provides a simple navigation & structure.
+Compose is a [Hugo](https://gohugo.io/) theme for documentation or Wiki sites.
 
 ![Hugo Compose Theme](https://raw.githubusercontent.com/onweru/compose/master/images/tn.png)
+
+
+## ExampleSite
+
+try it locally:
+```bash
+git clone --recurse-submodules --depth 1 https://github.com/onweru/compose.git
+cd compose/exampleSite/
+hugo server --themesDir ../..
+```
+
+The [exampleSite](https://github.com/onweru/compose/tree/master/exampleSite) is also theme's [user guide](https://composedocs.netlify.app/docs/compose/install-theme/) .
 
 ## Features
 
@@ -25,19 +37,6 @@ Compose is a [Hugo](https://gohugo.io/) theme for documentation websites. The th
 - [Shortcodes](https://composedocs.netlify.app/docs/compose/shortcodes/)
 - [Mermaid](https://composedocs.netlify.app/docs/compose/mermaid/)
 
-## ExampleSite
-
-The [exampleSite](https://github.com/onweru/compose/tree/master/exampleSite) serves as this theme's [user guide](https://composedocs.netlify.app/docs/compose/install-theme/) .
-
-This guide covers the necessary bits. As the project evolves, the user-guide will get more comprehensive
-
-You can use Hugo to generate and serve a local copy of the guide (also useful for testing local theme changes).
-
-```
-git clone --recurse-submodules --depth 1 https://github.com/onweru/compose.git
-cd compose/exampleSite/
-hugo server --themesDir ../..
-```
 
 ### Also built by Weru
 
