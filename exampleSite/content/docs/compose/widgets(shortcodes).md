@@ -22,6 +22,10 @@ This adds a styled link (styled like a button). It takes two no-optional paramet
   {{</* button "/" "doe nu mee" */>}}
 ```
 
+Result:
+
+{{< button "/" "doe nu mee" >}}
+
 ### Picture
 
 You want to use darkmode images when darkmode is enabled on a device and a regular image on lightmode? It takes 3 positional parameter
