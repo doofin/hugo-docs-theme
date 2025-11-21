@@ -32,7 +32,7 @@ You want to use darkmode images when darkmode is enabled on a device and a regul
 
 Store these images in the `static/images` directory.
 
-**Syntax**
+**Code**
 
 ```markdown
 ...
@@ -52,7 +52,7 @@ The 1st parameter is required. It's a _comma-separated list_ (`,`) of your image
 
 The 2nd parameter is optional. It's a _double-collon-separated list_ (`::`) of your images' alt/description/captions text. It's always a good SEO practice to include alt text for your images.
 
-**Syntax**
+**Code**
 
 ```markdown
 ...
@@ -73,7 +73,7 @@ The 2nd parameter is optional. It's a _double-collon-separated list_ (`::`) of y
 
 Use this short if you want to publish a multiple tabs component.
 
-**Syntax**
+**Code**
 
 ```markdown
 {{</* tabs "tabsId" */>}}
@@ -113,7 +113,7 @@ Use this short if you want to publish informational tooltips that look like:
 
 This tooltips may take either of the following forms:
 
-**Syntax**
+**Code**
 
 ```markdown
 {{</* tip */>}}
@@ -129,7 +129,7 @@ Something of **interest** you want to highlight
 
 **OR**
 
-**Syntax**
+**Code**
 
 ```markdown
 {{</* tip "warning" */>}}
@@ -173,7 +173,7 @@ It takes positional parameters
 
 This allows you to embed a youtube video in you content. You would achieve that using a positional parameter (needs no name )parameter, like so:
 
-**Syntax**
+**Code**
 
 ```markdown
   {{</* youtube "25QyCxVkXwQ" */>}}
@@ -186,7 +186,7 @@ This allows you to embed a youtube video in you content. You would achieve that 
 
 **OR**
 
-**Syntax**
+**Code**
 
 ```markdown
 <!-- or use full url -->

@@ -1,5 +1,5 @@
 +++
-title = "Mermaid"
+title = "More Diagrams with mermaid"
 weight = 8
 description = "Generate diagrams, flowcharts, and piecharts  from text in a similar manner as markdown."
 +++
@@ -10,7 +10,7 @@ With compose theme, you can use mermaid using a custom shortcode as follows:
 
 ### Sequence Diagrams
 
-**Syntax**
+**Code**
 
 ```tpl
 {{</* mermaid */>}}
@@ -46,7 +46,7 @@ sequenceDiagram
 
 ### Flow Charts
 
-**Syntax**
+**Code**
 
 ```tpl
 {{</* mermaid */>}}
@@ -87,7 +87,7 @@ flowchart TB
 
 ### Graphs
 
-**Syntax**
+**Code**
 
 ```tpl
 {{</* mermaid */>}}
@@ -141,7 +141,7 @@ graph TB
     class di orange
 {{< /mermaid >}}
 
-**Syntax**
+**Code**
 
 ```tpl
 {{</* mermaid */>}}
@@ -224,7 +224,7 @@ stateDiagram-v2
 
 ### Relationship Diagrams
 
-**Syntax**
+**Code**
 
 ```tpl
 {{</* mermaid */>}}
@@ -246,7 +246,7 @@ erDiagram
 
 ### User Journey
 
-**Syntax**
+**Code**
 
 ```tpl
 {{</* mermaid */>}}
@@ -279,7 +279,7 @@ journey
 
 ### Gantt
 
-**Syntax**
+**Code**
 
 ```tpl
 {{</* mermaid */>}}

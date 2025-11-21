@@ -1,9 +1,9 @@
 +++
-title = "Content organization"
+title = "Configuration"
 weight = 4
 +++
 
-This theme is primarily meant for documentation.
+This theme is primarily meant for documentation. You can customize the configuration under `exampleSite/config/_default/params.toml`. see the file for available options. 
 
 #### Documentation
 
@@ -11,10 +11,8 @@ By default, the theme will look for all your documentation content within the `d
 
 However, if you would like to have your docs content across multiple directories, please list those directories inside `config/_default/params.toml` under `docSections` like so:
 
-```
-...
+```toml
 docSections = ["docs", "tutorials"]
-...
 ```
 
 Unlike other regular pages, the documentation pages will have a left sidebar. This sidebar will list links to all the pages in the documentation pages. Beneath each link, there will be a collapsible list of __table of contents'__ links. These nested lists will unfold automatically on the active/current page.
