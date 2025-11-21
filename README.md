@@ -14,6 +14,8 @@ cd compose/exampleSite/
 hugo server --themesDir ../..
 ```
 
+Note: You must edit `hugo.toml` to set the `theme` parameter to the directory name of the theme directory when you change themes!
+
 The [exampleSite](https://github.com/onweru/compose/tree/master/exampleSite) is also theme's [user guide](https://composedocs.netlify.app/docs/compose/install-theme/) .
 
 ## Features
