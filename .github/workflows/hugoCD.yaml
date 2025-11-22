@@ -80,7 +80,7 @@ jobs:
         working-directory: ./exampleSite
         run: |
           hugo \
-            --themesDir ../..
+            --themesDir ../.. \
             --gc \
             --minify \
             --baseURL "${{ steps.pages.outputs.base_url }}/" \
