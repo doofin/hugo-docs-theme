@@ -77,7 +77,7 @@ jobs:
           key: hugo-${{ github.run_id }}
           restore-keys: hugo-
       - name: Build the site
-        working-directory: ./exampleSite
+        working-directory: ./exampleSite # for exampleSite builds
         # comment out themeDir if using modules
         run: |
           hugo \
@@ -88,16 +88,16 @@ jobs:
             --cacheDir "${{ runner.temp }}/hugo_cache"
       - name: Cache save
         id: cache-save
-        working-directory: ./exampleSite
+        # working-directory: ./exampleSite # for exampleSite builds
         uses: actions/cache/save@v4
         with:
           path: ${{ runner.temp }}/hugo_cache
           key: ${{ steps.cache-restore.outputs.cache-primary-key }}
       - name: Upload artifact
-        working-directory: ./exampleSite
+        # working-directory: ./exampleSite # for exampleSite builds
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./public
+          path: ./exampleSite/public
   deploy:
     environment:
       name: github-pages

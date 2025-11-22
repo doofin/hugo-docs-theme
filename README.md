@@ -18,7 +18,11 @@ Features:
 
 
 ## Demo site
-try it locally:
+Currently deployed at github pages: https://doofin.github.io/hugo-docs-theme/
+see `.github/workflows/hugoCD.yml` for deployment configuration
+
+
+Try it locally:
 ```bash
 git clone --recurse-submodules --depth 1 https://github.com/onweru/compose.git
 cd compose/exampleSite/
