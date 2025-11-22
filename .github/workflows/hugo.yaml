@@ -38,7 +38,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
-      - name: Setup Pages
+      - name: Setup GH Pages
         id: pages
         uses: actions/configure-pages@v5
       - name: Create directory for user-specific executable files
