@@ -1,6 +1,6 @@
 +++
 description = "Use hugo shortcodes to quickly compose your documentation pages."
-title = "widgets(shortcodes)"
+title = "Widgets(shortcodes)"
 weight = 5
 
 +++

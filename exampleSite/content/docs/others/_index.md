@@ -1,6 +1,6 @@
 +++
-title = "another Docs"
+title = "Another Docs"
 weight = 2
 +++
 
-This is another page under the "docs" section of the site. You can add your own documentation content here.
+This is another page under the `docs/others/_index.md` as an example of section index page.
