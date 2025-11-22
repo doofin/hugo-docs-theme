@@ -6,7 +6,6 @@ This PR...
 
 ## Screenshots (if applicable)
 
-(prefer animated gif)
 
 ## Checklist
 

@@ -2,7 +2,7 @@
 
 Compose is a [Hugo](https://gohugo.io/) theme for documentation or Wiki sites.
 
-![Hugo Compose Theme](https://raw.githubusercontent.com/onweru/compose/master/images/tn.png)
+[![Build and deploy](https://github.com/doofin/hugo-docs-theme/actions/workflows/hugoCD.yaml/badge.svg)](https://github.com/doofin/hugo-docs-theme/actions/workflows/hugoCD.yaml)
 
 Features:
 
@@ -31,7 +31,7 @@ hugo server --themesDir ../..
 
 Note: You must edit `hugo.toml` to set the `theme` parameter to the directory name of the theme directory when you change themes!
 
-The [exampleSite](https://github.com/onweru/compose/tree/master/exampleSite) is also theme's [user guide](https://composedocs.netlify.app/docs/compose/install-theme/) .
+The original [exampleSite](https://github.com/onweru/compose/tree/master/exampleSite) is also theme's [user guide](https://composedocs.netlify.app/docs/compose/install-theme/) .
 
 ## Deployment
 Deploy to github pages, see hugo docs:
@@ -44,6 +44,8 @@ Basic steps:
 
 
 ## Project architecture
+Currently, the theme folder is passed as argument to hugo command rather than using hugo modules, for github pages. The `go.mod` in this repo is problematic, please refer to the upstream repo for module usage.
+
 The theme uses the following technologies:
 - sass for styling, under the `layouts/partials/head/index.html`, which invokes hugo's sass processor
 - go lang for module mechanism(`go.mod` and `go.sum` files), which is used by hugo to manage themes as modules, pay attention since the module mechanism is complicated as it requires versioning
