@@ -50,6 +50,8 @@ The theme uses the following technologies:
 - sass for styling, under the `layouts/partials/head/index.html`, which invokes hugo's sass processor
 - go lang for module mechanism(`go.mod` and `go.sum` files), which is used by hugo to manage themes as modules, pay attention since the module mechanism is complicated as it requires versioning
 
+In addition, refer to **docs**: https://doofin.github.io/hugo-docs-theme/docs/compose/config/ to understand the configuration options
+
 
 To learn more about directory structure, see [Hugo directory structure](https://gohugo.io/getting-started/directory-structure/)
 

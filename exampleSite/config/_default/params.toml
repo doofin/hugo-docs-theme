@@ -34,7 +34,8 @@ enableCopyright = false
 # search
 [search]
 global = false # turn to `true` to enable global search
-on = true 
+on = false 
+
 [search.algolia]
 enable = false # if false search will default to fusejs
 id = "Q40WQQX84U" # Application ID
