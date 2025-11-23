@@ -8,13 +8,7 @@ This page tells you how to get started with the Compose theme.
 
 ### Prerequisites
 
-First ensure that you have hugo installed.
-
-You need a [recent **extended** version](https://github.com/gohugoio/hugo/releases) (we recommend version 0.61 or later) of [Hugo](https://gohugo.io/) to do local builds and previews of sites (like this one) that uses this theme.
-
-If you install from the release page, make sure to get the `extended` Hugo version, which supports [sass](https://sass-lang.com/documentation/file.SCSS_FOR_SASS_USERS.html); you may need to scroll down the list of releases to see it. 
-
-For comprehensive Hugo documentation, see [gohugo.io](https://gohugo.io/).
+First ensure that you have `hugo` command installed, with version >= 0.61([Hugo](https://gohugo.io/), make sure to install the `extended` version for sass).
 
 ## Run your site with compose theme
 
@@ -29,6 +23,7 @@ $ git clone https://github.com/onweru/compose/
 cd compose/exampleSite/
 hugo server
 ```
+
 
 To pull in theme updates, run `hugo mod get -u ./...` from the theme folder. If unsure, [learn how to update hugo modules](https://gohugo.io/hugo-modules/use-modules/#update-modules)
 

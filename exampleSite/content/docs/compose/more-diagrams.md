@@ -1,5 +1,5 @@
 +++
-title = "More Diagrams and Charts"
+title = "More Diagrams with chart.js"
 weight = 9
 [dataset1]
   fileLink = "content/projects.csv" # path to where csv is stored

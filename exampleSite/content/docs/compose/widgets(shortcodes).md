@@ -1,6 +1,6 @@
 +++
 description = "Use hugo shortcodes to quickly compose your documentation pages."
-title = "widgets(shortcodes)"
+title = "Widgets(shortcodes)"
 weight = 5
 
 +++
@@ -32,7 +32,7 @@ You want to use darkmode images when darkmode is enabled on a device and a regul
 
 Store these images in the `static/images` directory.
 
-**Syntax**
+**Code**
 
 ```markdown
 ...
@@ -52,7 +52,7 @@ The 1st parameter is required. It's a _comma-separated list_ (`,`) of your image
 
 The 2nd parameter is optional. It's a _double-collon-separated list_ (`::`) of your images' alt/description/captions text. It's always a good SEO practice to include alt text for your images.
 
-**Syntax**
+**Code**
 
 ```markdown
 ...
@@ -73,7 +73,7 @@ The 2nd parameter is optional. It's a _double-collon-separated list_ (`::`) of y
 
 Use this short if you want to publish a multiple tabs component.
 
-**Syntax**
+**Code**
 
 ```markdown
 {{</* tabs "tabsId" */>}}
@@ -113,7 +113,7 @@ Use this short if you want to publish informational tooltips that look like:
 
 This tooltips may take either of the following forms:
 
-**Syntax**
+**Code**
 
 ```markdown
 {{</* tip */>}}
@@ -129,7 +129,7 @@ Something of **interest** you want to highlight
 
 **OR**
 
-**Syntax**
+**Code**
 
 ```markdown
 {{</* tip "warning" */>}}
@@ -173,7 +173,7 @@ It takes positional parameters
 
 This allows you to embed a youtube video in you content. You would achieve that using a positional parameter (needs no name )parameter, like so:
 
-**Syntax**
+**Code**
 
 ```markdown
   {{</* youtube "25QyCxVkXwQ" */>}}
@@ -186,7 +186,7 @@ This allows you to embed a youtube video in you content. You would achieve that 
 
 **OR**
 
-**Syntax**
+**Code**
 
 ```markdown
 <!-- or use full url -->
@@ -206,36 +206,4 @@ The `liteyoutube` shortcode supports three parameters:
 | videoid   | YouTube video identifier            | no       |
 | params    | YouTube parameters                  | yes      |
 | img       | Background image from static/images | yes      |
-
-##### With no Parameters
-
-This example shows only supplying the required `videoid` (without a named parameter). You can also add the `img` and `params` parameters (in that order) without using named parameters.
-
-```markdown
-{{</* liteyoutube "MmG2ah5Df4g" */>}}
-```
-
-{{< liteyoutube "MmG2ah5Df4g" >}}
-
-##### With `videoid` and `params`
-
-The params string instructs YouTube to play only 20 seconds of the video starting at ten seconds and ending at 30 seconds. It also disables the player controls and enables the YouTube `JSAPI`.
-
-```markdown
-{{</* liteyoutube videoid="MmG2ah5Df4g" params="controls=0&start=10&end=30&modestbranding=2&rel=0&enablejsapi=1" */>}}
-```
-
-{{< liteyoutube videoid="MmG2ah5Df4g" params="controls=0&start=10&end=30&modestbranding=2&rel=0&enablejsapi=1" >}}
-
-##### With All Three Positional Parameters
-
-```markdown
-{{</* liteyoutube "MmG2ah5Df4g" "painting.jpg" "controls=0&start=10&end=30&modestbranding=2&rel=0&enablejsapi=1" */>}}
-```
-
-{{< liteyoutube "MmG2ah5Df4g" "painting.jpg" "controls=0&start=10&end=30&modestbranding=2&rel=0&enablejsapi=1" >}}
-
-{{< tip >}}
-You can browse the full list of YouTube parameters [here](https://developers.google.com/youtube/player_parameters#Parameters)
-{{< /tip >}}
 

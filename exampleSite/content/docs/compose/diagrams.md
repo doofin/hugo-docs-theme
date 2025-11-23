@@ -1,5 +1,5 @@
 +++
-title = "Diagrams"
+title = "Diagrams with Mermaid"
 weight = 8
 description = "Generate diagrams, flowcharts, and piecharts  from text in a similar manner as markdown."
 +++
@@ -8,9 +8,125 @@ description = "Generate diagrams, flowcharts, and piecharts  from text in a simi
 
 With compose theme, you can use mermaid using a custom shortcode as follows:
 
+### Graphs
+
+**Code**
+Just two node with an edge:
+```tpl
+{{</* mermaid */>}}
+graph TB
+  sq[Square] --aab--> ci((Circle))
+{{</* /mermaid */>}}
+```
+
+**Result**
+
+{{< mermaid >}}
+graph TB
+  sq[Square] --aab--> ci((Circle))
+{{< /mermaid >}}
+
+More complex graph with multiple nodes and edges:
+
+```tpl
+{{</* mermaid */>}}
+graph TB
+  a--edg-->b
+  a--edg-->c
+  a--edg-->d
+  d--edg-->b
+{{</* /mermaid */>}}
+```
+
+**Result**
+
+{{< mermaid >}}
+graph TB
+  a--edg-->b
+  a--edg-->c
+  a--edg-->d
+  d--edg-->b
+{{< /mermaid >}}
+
+**Code**
+```tpl
+{{</* mermaid */>}}
+graph TB
+  sq[Square shape] --> ci((Circle shape))
+
+  subgraph A
+    od>Odd shape]-- Two line<br/>edge comment --> ro
+    di{Diamond with <br/> line break} -.-> ro(Rounded<br>square<br>shape)
+    di==>ro2(Rounded square shape)
+  end
+
+  %% Notice that no text in shape are added here instead that is appended further down
+  e --> od3>Really long text with linebreak<br>in an Odd shape]
+
+  %% Comments after double percent signs
+  e((Inner / circle<br>and some odd <br>special characters)) --> f(,.?!+-*ز)
+
+  cyr[Cyrillic]-->cyr2((Circle shape Начало));
+
+    classDef green fill:#9f6,stroke:#333,stroke-width:2px;
+    classDef orange fill:#f96,stroke:#333,stroke-width:4px;
+    class sq,e green
+    class di orange
+{{</* /mermaid */>}}
+```
+
+**Result**
+
+{{< mermaid >}}
+graph TB
+  sq[Square shape] --> ci((Circle shape))
+
+  subgraph A
+    od>Odd shape]-- Two line<br/>edge comment --> ro
+    di{Diamond with <br/> line break} -.-> ro(Rounded<br>square<br>shape)
+    di==>ro2(Rounded square shape)
+  end
+
+  %% Notice that no text in shape are added here instead that is appended further down
+  e --> od3>Really long text with linebreak<br>in an Odd shape]
+
+  %% Comments after double percent signs
+  e((Inner / circle<br>and some odd <br>special characters)) --> f(,.?!+-*ز)
+
+  cyr[Cyrillic]-->cyr2((Circle shape Начало));
+
+    classDef green fill:#9f6,stroke:#333,stroke-width:2px;
+    classDef orange fill:#f96,stroke:#333,stroke-width:4px;
+    class sq,e green
+    class di orange
+{{< /mermaid >}}
+
+**Code**
+
+```tpl
+{{</* mermaid */>}}
+graph LR
+  A[Hard edge] -->|Link text| B(Round edge)
+  B --> C{Decision}
+  C -->|One| D[Result one]
+  C -->|Two| E[Result two]
+{{</* /mermaid */>}}
+```
+
+**Result**
+
+{{< mermaid >}}
+graph LR
+  A[Hard edge] -->|Link text| B(Round edge)
+  B --> C{Decision}
+  C -->|One| D[Result one]
+  C -->|Two| E[Result two]
+{{< /mermaid >}}
+
+
 ### Sequence Diagrams
 
-**Snippet**
+**Code**
 
 ```tpl
 {{</* mermaid */>}}
@@ -46,7 +162,7 @@ sequenceDiagram
 
 ### Flow Charts
 
-**Snippet**
+**Code**
 
 ```tpl
 {{</* mermaid */>}}
@@ -85,83 +201,6 @@ flowchart TB
   two --> c2
 {{< /mermaid >}}
 
-### Graphs
-
-**Snippet**
-
-```tpl
-{{</* mermaid */>}}
-graph TB
-  sq[Square shape] --> ci((Circle shape))
-
-  subgraph A
-    od>Odd shape]-- Two line<br/>edge comment --> ro
-    di{Diamond with <br/> line break} -.-> ro(Rounded<br>square<br>shape)
-    di==>ro2(Rounded square shape)
-  end
-
-  %% Notice that no text in shape are added here instead that is appended further down
-  e --> od3>Really long text with linebreak<br>in an Odd shape]
-
-  %% Comments after double percent signs
-  e((Inner / circle<br>and some odd <br>special characters)) --> f(,.?!+-*ز)
-
-  cyr[Cyrillic]-->cyr2((Circle shape Начало));
-
-    classDef green fill:#9f6,stroke:#333,stroke-width:2px;
-    classDef orange fill:#f96,stroke:#333,stroke-width:4px;
-    class sq,e green
-    class di orange
-{{</* /mermaid */>}}
-```
-
-**Result**
-
-{{< mermaid >}}
-graph TB
-  sq[Square shape] --> ci((Circle shape))
-
-  subgraph A
-    od>Odd shape]-- Two line<br/>edge comment --> ro
-    di{Diamond with <br/> line break} -.-> ro(Rounded<br>square<br>shape)
-    di==>ro2(Rounded square shape)
-  end
-
-  %% Notice that no text in shape are added here instead that is appended further down
-  e --> od3>Really long text with linebreak<br>in an Odd shape]
-
-  %% Comments after double percent signs
-  e((Inner / circle<br>and some odd <br>special characters)) --> f(,.?!+-*ز)
-
-  cyr[Cyrillic]-->cyr2((Circle shape Начало));
-
-    classDef green fill:#9f6,stroke:#333,stroke-width:2px;
-    classDef orange fill:#f96,stroke:#333,stroke-width:4px;
-    class sq,e green
-    class di orange
-{{< /mermaid >}}
-
-**Snippet**
-
-```tpl
-{{</* mermaid */>}}
-graph LR
-  A[Hard edge] -->|Link text| B(Round edge)
-  B --> C{Decision}
-  C -->|One| D[Result one]
-  C -->|Two| E[Result two]
-{{</* /mermaid */>}}
-```
-
-**Result**
-
-{{< mermaid >}}
-graph LR
-  A[Hard edge] -->|Link text| B(Round edge)
-  B --> C{Decision}
-  C -->|One| D[Result one]
-  C -->|Two| E[Result two]
-{{< /mermaid >}}
 
 ### Class Diagram
 
@@ -224,7 +263,7 @@ stateDiagram-v2
 
 ### Relationship Diagrams
 
-**Snippet**
+**Code**
 
 ```tpl
 {{</* mermaid */>}}
@@ -246,7 +285,7 @@ erDiagram
 
 ### User Journey
 
-**Snippet**
+**Code**
 
 ```tpl
 {{</* mermaid */>}}
@@ -279,7 +318,7 @@ journey
 
 ### Gantt
 
-**Snippet**
+**Code**
 
 ```tpl
 {{</* mermaid */>}}

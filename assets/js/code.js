@@ -1,3 +1,4 @@
+/* this file is used to add functionality to code snippets such as copy to clipboard, line numbers, line wrap, and expand/collapse */
 const snippet_actions = [
   {
     icon: 'copy',
@@ -31,7 +32,7 @@ function addLines(block) {
   if (text.includes('\n') && block.closest('pre') && !block.children.length) {
     text = text.split('\n');
     text.forEach((text_node, index) => {
-      if(text_node.trim().length) {
+      if (text_node.trim().length) {
         const new_node = `
         <span class="line line-flex">
           <span class="ln">${index + 1}</span>
@@ -51,10 +52,10 @@ function addLines(block) {
 
 function wrapOrphanedPreElements() {
   const pres = elems('pre');
-  Array.from(pres).forEach(function(pre){
+  Array.from(pres).forEach(function (pre) {
     const parent = pre.parentNode;
     const is_orpaned = !containsClass(parent, highlight);
-    if(is_orpaned) {
+    if (is_orpaned) {
       const pre_wrapper = createEl();
       pre_wrapper.className = highlight;
       const outer_wrapper = createEl();
@@ -73,10 +74,10 @@ wrapOrphanedPreElements();
 
 function codeBlocks() {
   const marked_code_blocks = elems('code');
-  const blocks = Array.from(marked_code_blocks).filter(function(block){
+  const blocks = Array.from(marked_code_blocks).filter(function (block) {
     addLines(block);
     return block.closest("pre") && !Array.from(block.classList).includes('noClass');
-  }).map(function(block){
+  }).map(function (block) {
     return block
   });
   return blocks;
@@ -95,16 +96,16 @@ function maxHeightIsSet(elem) {
 }
 
 function restrainCodeBlockHeight(lines) {
-  const last_line = lines[max_lines-1];
+  const last_line = lines[max_lines - 1];
   let max_code_block_height = full_height;
-  if(last_line) {
+  if (last_line) {
     const last_line_pos = last_line.offsetTop;
-    if(last_line_pos !== 0) {
+    if (last_line_pos !== 0) {
       max_code_block_height = `${last_line_pos}px`;
       const codeBlock = lines[0].parentNode;
       const outer_block = codeBlock.closest(`.${highlight}`);
       const is_expanded = containsClass(outer_block, panel_expanded);
-      if(!is_expanded) {
+      if (!is_expanded) {
         codeBlock.dataset.height = max_code_block_height;
         codeBlock.style.maxHeight = max_code_block_height;
       }
@@ -124,7 +125,7 @@ function collapseCodeBlock(block) {
     expand_dot.title = "Toggle snippet";
     expand_dot.textContent = "...";
     const outer_block = block.closest('.highlight');
-    window.setTimeout(function(){
+    window.setTimeout(function () {
       const expand_icon = outer_block.nextElementSibling.lastElementChild;
       deleteClass(expand_icon, panel_hide);
     }, 150)
@@ -135,15 +136,26 @@ function collapseCodeBlock(block) {
   }
 }
 
-blocks.forEach(function(block){
+blocks.forEach(function (block) {
   collapseCodeBlock(block);
 })
 
+/**
+ * Creates an action panel element with a set of buttons.
+ *
+ * This function generates a panel element and populates it with buttons
+ * based on the `snippet_actions` array. Each button is styled and configured
+ * with properties such as `href`, `title`, and `className`. If a button is
+ * marked as hidden, it will have the `panel_hide` class applied. Additionally,
+ * SVG icons are loaded into the buttons.
+ *
+ * @returns {HTMLElement} The created action panel element.
+ */
 function actionPanel() {
   const panel = createEl();
   panel.className = panel_box;
 
-  snippet_actions.forEach(function(button) {
+  snippet_actions.forEach(function (button) {
     // create button
     const btn = createEl('a');
     btn.href = '#';
@@ -160,7 +172,7 @@ function actionPanel() {
 }
 
 function toggleLineNumbers(elems) {
-  if(elems) {
+  if (elems) {
     // mark the code element when there are no lines
     elems.forEach(elem => modifyClass(elem, 'pre_nolines'));
     restrainCodeBlockHeight(elems);
@@ -190,7 +202,7 @@ function copyCode(code_element) {
   let lines = elems('span', code_element);
   lines.forEach(line => {
     const text = line.textContent.trim(' ');
-    if(text.indexOf('$') === 0) {
+    if (text.indexOf('$') === 0) {
       line.textContent = line.textContent.replace('$ ', '');
     }
   })
@@ -198,15 +210,15 @@ function copyCode(code_element) {
   // copy code
   copyToClipboard(snippet);
 
-  setTimeout(function() {
+  setTimeout(function () {
     copy_btn.title = original_title;
     loadSvg('copy', copy_btn);
   }, 2250);
 }
 
-(function codeActions(){
+(function codeActions() {
   const highlight_wrap_id = highlight_wrap;
-  blocks.forEach(function(block){
+  blocks.forEach(function (block) {
     // disable line numbers if disabled globally
     show_lines === false ? toggleLineNumbers(elems('.ln', block)) : false;
 
@@ -235,12 +247,13 @@ function copyCode(code_element) {
     const target_element = target.matches(`.${targetClass}`) ? target : target.closest(`.${targetClass}`);
 
     deleteClass(target_element, active);
-    setTimeout(function() {
+    setTimeout(function () {
       modifyClass(target_element, active)
     }, 50)
   }
 
-  doc.addEventListener('click', function(event){
+  // check for clicks on action panel
+  doc.addEventListener('click', function (event) {
     // copy code block
     const target = event.target;
     const is_copy_icon = isItem(target, copy_id);
@@ -249,7 +262,7 @@ function copyCode(code_element) {
     const is_expand_icon = isItem(target, panel_expand);
     const is_actionable = is_copy_icon || is_wrap_icon || is_lines_icon || is_expand_icon;
 
-    if(is_actionable) {
+    if (is_actionable) {
       event.preventDefault();
       showActive(target, 'icon');
       const code_element = target.closest(`.${highlight_wrap_id}`).firstElementChild.firstElementChild;
@@ -261,7 +274,7 @@ function copyCode(code_element) {
       if (is_expand_icon) {
         let this_code_block = code_element.firstElementChild;
         const outer_block = this_code_block.closest('.highlight');
-        if(maxHeightIsSet(this_code_block)) {
+        if (maxHeightIsSet(this_code_block)) {
           this_code_block.style.maxHeight = full_height;
           // mark code block as expanded
           pushClass(outer_block, panel_expanded)
@@ -276,11 +289,12 @@ function copyCode(code_element) {
     }
   });
 
+  // add language label to code blocks
   (function addLangLabel() {
     blocks.forEach(block => {
       let label = block.dataset.lang;
       const is_shell_based = shell_based.includes(label);
-      if(is_shell_based) {
+      if (is_shell_based) {
         const lines = elems(line_class, block);
         Array.from(lines).forEach(line => {
           line = line.lastElementChild;
@@ -290,7 +304,7 @@ function copyCode(code_element) {
       }
 
       label = label === 'sh' ? 'shell' : label;
-      if(label !== "fallback") {
+      if (label !== "fallback") {
         const label_el = createEl();
         label_el.textContent = label;
         pushClass(label_el, 'lang');

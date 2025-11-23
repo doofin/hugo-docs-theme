@@ -46,5 +46,4 @@ css.Sass $options | fingerprint "sha512" }}
 {{- else if $config.Description }}
 <meta name="descripion" content="{{ $config.Description }}">
 {{- end }}
-{{- partial "head/liteyoutube" . }}
 {{- partialCached "hooks/head" . -}}
