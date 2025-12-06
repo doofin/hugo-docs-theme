@@ -16,6 +16,10 @@ Features:
 8. Syntax highlighting
 9. Tina CMS support. Ships with configuration
 
+## Usage
+use as a template:
+- click "Use this template" in github when creating a new repo, or just clone this repo
+- under `exampleSite/config/hugo.toml`, change `theme` to your repo name
 
 ## Demo site
 Currently deployed at github pages: https://doofin.github.io/hugo-docs-theme/
