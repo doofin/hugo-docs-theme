@@ -6,6 +6,8 @@ weight = 5
 +++
 Hugo lets you define and use [shortcodes](https://gohugo.io/content-management/shortcodes/) to add widgets like buttons, videos, galleries, tabs, tips, and more to your content.
 
+This is theme specific, see [hugo](https://gohugo.io/content-management/) for hugo's wide variety of widgets.
+
 ### Button
 
 This adds a styled link (styled like a button). It takes two no-optional parameters:
