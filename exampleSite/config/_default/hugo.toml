@@ -1,5 +1,4 @@
-baseURL = "https://example.com/"
-enableRobotsTXT = true
+baseURL = "https://doofin.github.io/hugo-docs-theme"
 title = "Compose Docs"
 
 # depending on how you install the theme, uncomment one of the below:
