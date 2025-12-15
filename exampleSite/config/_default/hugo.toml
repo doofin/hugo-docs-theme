@@ -1,4 +1,4 @@
-baseURL = "https://doofin.github.io/hugo-docs-theme"
+baseURL = "https://doofin.github.io/hugo-docs-theme/"
 title = "Compose Docs"
 
 # depending on how you install the theme, uncomment one of the below:
